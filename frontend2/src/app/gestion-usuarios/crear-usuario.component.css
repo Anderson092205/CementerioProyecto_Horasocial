@@ -1,0 +1,104 @@
+.container {
+    display: flex;
+    justify-content: center; 
+    align-items: center;     
+    min-height: 85vh; 
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.card {
+    width: 100%;
+    max-width: 800px;
+    border-radius: 12px;
+    border: 2px solid #ffc0cb; 
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15) !important;
+    background-color: #ffffff;
+}
+
+.card-header {
+    background-color: #d73387 !important; 
+    color: white !important;
+    padding: 40px 25px !important;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.badge.bg-info {
+    background-color: #ffffff !important;
+    color: #d73387 !important;
+    font-weight: bold;
+    padding: 10px 15px;
+}
+
+.card-body { padding: 40px; }
+
+.text-danger.small {
+    font-weight: 600;
+    font-size: 0.85rem;
+}
+
+.alert {
+    border-radius: 8px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.form-control, .form-select {
+    border: 1px solid #ffc0cb; 
+    border-radius: 8px;
+    padding: 12px;
+}
+
+.btn-success {
+    background-color: #d73387 !important;
+    border: none;
+    font-weight: bold;
+    padding: 12px 30px;
+}
+
+.btn-success:disabled {
+    background-color: #ccc !important;
+}
+
+.border-top { border-top: 2px solid #ffb6c1 !important; }
+
+/* --- ESTILOS DE ALERTAS (Éxito y Error General) --- */
+.alert {
+    border-radius: 8px;
+    font-weight: bold;
+    text-align: center;
+    padding: 15px;
+    margin-bottom: 20px;
+}
+
+/* Alerta de Éxito (Fondo verde suave, texto verde fuerte) */
+.alert-success {
+    background-color: #d4edda !important;
+    color: #155724 !important;
+    border: 1px solid #c3e6cb !important;
+}
+
+/* Alerta de Error General (Fondo rojo suave, texto rojo fuerte) */
+.alert-danger {
+    background-color: #f8d7da !important;
+    color: #721c24 !important;
+    border: 1px solid #f5c6cb !important;
+}
+
+/* --- MENSAJES DEBAJO DE LOS INPUTS (Campo obligatorio) --- */
+.text-danger {
+    color: #dc3545 !important; /* Rojo estándar de error */
+    display: block; /* Asegura que tome su propia línea */
+}
+
+.small {
+    font-size: 0.85rem !important;
+    font-weight: 600 !important;
+}
+
+/* Estilo extra para resaltar el borde del input cuando hay error */
+.form-control.is-invalid {
+    border-color: #dc3545 !important;
+}

@@ -1,0 +1,314 @@
+/* ===================== TOP BAR ===================== */
+.top-bar {
+    background-color: #d73387;
+    color: white;
+    padding: 25px 34px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.title-left {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* ===================== HEADER ===================== */
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 40px;
+    background: #fafafa;
+}
+
+.logo-area {
+    display: flex;
+    align-items: center;
+}
+
+.logo-img {
+    width: 70px;
+    margin-right: 15px;
+}
+
+/* >>> NUEVO GRUPO DE TEXTO PARA CENTRAR <<< */
+.text-group {
+    display: flex;
+    flex-direction: column;   /* Texto negro abajo */
+    align-items: center;      /* Centrar horizontal */
+    line-height: 1.1;
+}
+
+.titulo-rosa {
+    font-size: 22px;
+    font-weight: bold;
+    color: #d73387;
+}
+
+.titulo-negro {
+    font-size: 18px;
+    font-weight: bold;
+    color: #000;
+}
+
+/* ===================== MAIN ===================== */
+.cementerios-container {
+    padding: 30px 40px;
+}
+
+.titulo {
+    font-size: 26px;
+    font-weight: bold;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+/* ===================== GRID ===================== */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 25px;
+}
+
+/* ===================== CARD ===================== */
+.card {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.15);
+    overflow: hidden;
+    transition: 0.2s;
+    border: 2px solid #ffc0cb;
+}
+
+.card:hover {
+    transform: scale(1.03);
+}
+
+.card-img img {
+    width: 100%;
+    height: 120px;
+    object-fit: contain;
+    background: #eee;
+    padding: 10px;
+}
+
+.line {
+    height: 4px;
+    background: #ffb6c1;
+    margin-top: -5px;   /* mueve hacia arriba */
+    margin-left: 20px;
+    margin-right: 20px;
+    border-radius: 10px;
+}
+
+
+
+/* CONTENIDO */
+.card-body {
+    padding: 15px;
+    text-align: center;
+    background: #d73387; /* fondo rosa claro */
+}
+
+.card-title {
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+}
+
+.card-tipo {
+    color: white;
+    margin-bottom: 12px;
+}
+
+/* BOTÓN */
+.btn-ir {
+    padding: 8px 15px;
+    background: white;
+    color: black;
+    border-radius: 6px;
+    text-decoration: none;
+}
+
+.btn-ir:hover {
+    background: #b0144d;
+}
+
+/* LOGOUT */
+.logout {
+    margin-top: 40px;
+    text-align: center;
+}
+
+.btn-logout {
+    padding: 10px 20px;
+    background: red;
+    color: white;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+/* ===================== LAYOUT ESTRUCTURA ===================== */
+.app-container {
+    display: flex;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+.main-content {
+    flex: 1;
+    transition: margin-left 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ===================== SIDEBAR ===================== */
+.sidebar {
+    width: 260px;
+    background: #fff;
+    border-right: 1px solid #eee;
+    position: fixed;
+    height: 100%;
+    left: -260px; /* Oculto por defecto */
+    transition: left 0.3s ease;
+    z-index: 1000;
+    box-shadow: 2px 0 10px rgba(0,0,0,0.1);
+}
+
+.sidebar.active {
+    left: 0;
+}
+
+.sidebar-header {
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.sidebar-logo { width: 40px; margin-right: 10px; }
+
+.sidebar-nav { padding: 20px 0; }
+
+.nav-link {
+    display: flex;
+    align-items: center;
+    padding: 12px 25px;
+    color: #444;
+    text-decoration: none;
+    transition: background 0.2s;
+    cursor: pointer;
+}
+
+.nav-link:hover, .nav-link.active {
+    background: #fff0f6;
+    color: #d73387;
+}
+
+.nav-link .icon { margin-right: 15px; font-size: 1.2rem; }
+
+.sidebar-divider { height: 1px; background: #eee; margin: 15px 25px; }
+
+/* ===================== TOP BAR & HEADER ===================== */
+.top-bar {
+    background-color: #d73387;
+    color: white;
+    padding: 15px 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header-left { display: flex; align-items: center; gap: 20px; }
+
+.hamburger {
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.hamburger span {
+    width: 25px;
+    height: 3px;
+    background: white;
+    border-radius: 2px;
+}
+
+.logo-area { display: flex; align-items: center; }
+.logo-img { width: 50px; margin-right: 12px; }
+
+.text-group {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.1;
+}
+
+.titulo-rosa { font-size: 18px; font-weight: bold; color: #fff; } /* En topbar es blanco */
+.sidebar .titulo-rosa { color: #d73387; } /* En sidebar es rosa */
+
+.titulo-negro { font-size: 14px; font-weight: bold; color: #000; }
+
+.lang-selector { cursor: pointer; font-weight: bold; margin-left: 15px; }
+
+/* ===================== GRID & CARDS (Tus estilos originales) ===================== */
+.cementerios-container { padding: 30px; }
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 25px;
+}
+
+.card {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    overflow: hidden;
+    transition: 0.3s;
+    border: 1px solid #ffc0cb;
+}
+
+.card:hover { transform: translateY(-5px); }
+
+.card-img img {
+    width: 100%;
+    height: 140px;
+    object-fit: contain;
+    background: #f9f9f9;
+    padding: 15px;
+}
+
+.line {
+    height: 4px;
+    background: #ffb6c1;
+    margin: 0 20px;
+    border-radius: 10px;
+}
+
+.card-body {
+    padding: 20px;
+    text-align: center;
+    background: #d73387;
+}
+
+.card-title { color: white; font-size: 1.2rem; margin-bottom: 5px; }
+.card-tipo { color: #ffe0ef; font-size: 0.9rem; margin-bottom: 15px; }
+
+.btn-ir {
+    display: inline-block;
+    padding: 8px 25px;
+    background: white;
+    color: #d73387;
+    border-radius: 20px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.2s;
+}
+
+.btn-ir:hover { background: #ffe0ef; }
+
+/* Mensajes */
+.mensaje { text-align: center; padding: 20px; font-weight: bold; }
+.error { color: red; }

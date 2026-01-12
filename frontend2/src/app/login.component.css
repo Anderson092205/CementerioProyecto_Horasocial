@@ -1,0 +1,225 @@
+:host {
+  display: block;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #d73387;
+  min-height: 100vh;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Fondo del mapa */
+:host::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('assets/mapa1.png') center center no-repeat;
+  background-size: contain;
+  z-index: 1;
+}
+
+/* Encabezado superior*/
+.top-header {
+  background-color: #d73387;
+  padding: 0.5rem 2rem;
+  font-size: 0.9rem;
+  color: #ffffff;
+  text-align: right;
+  z-index: 2;
+  position: relative;
+}
+
+/* Barra principal */
+.main-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 2rem 1rem 2rem;
+  background-color: white;
+  color: #d73387;
+  z-index: 2;
+  position: relative;
+}
+
+.app-logo-section {
+  display: flex;
+  align-items: center;
+  gap: 0.8 rem;
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+
+.main-logo {
+  height: 50px;
+}
+
+.main-nav {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  font-size: 0.95rem;
+  color: #050505;
+  font-size: 15px;
+}
+
+.language-selector {
+  cursor: default;
+}
+
+/* Contenedor principal */
+.main-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  z-index: 2;
+  position: relative;
+  min-height: calc(100vh - 140px);
+}
+
+
+/* Caja de login */
+.login-wrapper {
+  width: 100%;
+  max-width: 400px;
+}
+
+.login-box {
+  background: rgba(255, 255, 255, 0.85); 
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.2);
+  animation: fadeIn 1s ease-in-out;
+  text-align: center;
+  backdrop-filter: blur(2px); 
+}
+
+/* Logo alcaldía */
+.logo-container {
+  margin-bottom: 2rem;
+  display: flex;
+  justify-content: center;
+}
+
+.alcaldia-logo {
+  height: 100px;
+  max-width: 100%;
+  object-fit: contain;
+}
+
+
+.alcaldia-logo {
+  height: auto;
+  width: 40% ;
+}
+
+
+/* Formulario */
+.form-group input {
+  width: 100%;
+  padding: 0.6rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 0.95rem;
+}
+
+/* Opciones del formulario */
+.form-options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.85rem;
+  margin-bottom: 1rem;
+}
+
+.forgot-password {
+  color: #0077cc;
+  text-decoration: none;
+}
+
+/* Botón ACCEDER — azul */
+.btn-acceder {
+  background-color: #0077cc;
+  color: white;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+/* Mensaje de error */
+.error-message {
+  color: red;
+  font-size: 0.85rem;
+  margin-bottom: 1rem;
+}
+
+/* Botones inferiores */
+.bottom-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.bottom-buttons .btn-assistance {
+  background-color: #28a745; /* verde */
+  color: white;
+  border: none;
+  padding: 0.5rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.85rem;
+}
+
+.bottom-buttons .btn-back {
+  background-color: #ffc107; /* amarillo */
+  color: black;
+  border: none;
+  padding: 0.5rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.85rem;
+}
+
+/* Animación fadeIn */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ==========================================================
+   ESTILOS PARA EL FOOTER
+   ========================================================== */
+
+/* 1. Estilo y Posicionamiento del Footer */
+.app-footer {
+    /* Fija el footer en la parte inferior de la ventana visible (viewport) */
+    position: fixed; 
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    
+    /* Diseño */
+    background-color: #f8f8f8; /* Fondo blanco/gris muy claro */
+    color: #000000; /* Texto gris oscuro */
+    text-align: center;
+    padding: 2px 0;
+    font-size: 1 rem; /* Tamaño de letra pequeño */
+    border-top: 1px solid #eee; /* Línea separadora sutil */
+    
+    /* Asegura que esté por encima del fondo, pero debajo del contenido principal */
+    z-index: 10; 
+}
+
+
+.main-container {
+    /* Se calcula un espacio de margen para que el contenido no quede debajo del footer */
+    min-height: calc(100vh - 140px); /* Su cálculo original */
+    padding-bottom: 50px; /* Se añade el espacio extra para el footer */
+}

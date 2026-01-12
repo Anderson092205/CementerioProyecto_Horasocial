@@ -1,0 +1,87 @@
+<div class="caja-detalle">
+
+    <!-- Botón volver a lista general -->
+    <button class="btn-regresar" (click)="goBack()">⟵ Volver</button>
+
+    <!-- Cargando -->
+    <div *ngIf="cargando" class="loading">Cargando datos...</div>
+
+    <!-- Error -->
+    <div *ngIf="errorCarga" class="error">{{ errorCarga }}</div>
+
+    <!-- === VISTA PRINCIPAL === -->
+    <div *ngIf="vista === 'lista' && cementerioDetalle">
+
+        <h2 class="titulo-detalle">{{ cementerioDetalle.nombre }}</h2>
+        <p><strong>Ubicación:</strong> {{ cementerioDetalle.ubicacion }}</p>
+        <p><strong>Tipo:</strong> {{ cementerioDetalle.tipo }}</p>
+
+        <table class="tabla-detalle">
+
+            <tr class="tabla-header">
+                <th>Parcela</th>
+                <th>Documentos</th>
+                <th>Pagos</th>
+            </tr>
+
+            <tr 
+                class="fila-detalle" 
+                *ngFor="let parcela of columnas; let i = index">
+
+                <!-- Parcela -->
+                <td class="col-parcela">
+                    <button class="btn-parcela" (click)="abrirParcela(i + 1)">
+                        {{ parcela }}
+                    </button>
+                </td>
+
+                <!-- DOCUMENTOS: ahora un botón igual que Parcela -->
+                <td class="col-documentos">
+                    <button class="btn-documentos" (click)="abrirDocumentos(i + 1)">
+                      Documentos {{ i + 1 }}
+                    </button>
+                </td>
+
+                <!-- PAGOS: ahora un botón igual que Parcela -->
+                <td class="col-pagos">
+                    <button class="btn-pagos" (click)="abrirPagos(i + 1)">
+                      Pagos {{ i + 1 }}
+                    </button>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+
+    <!-- === SUB-VISTAS DINÁMICAS === -->
+
+    <!-- PARCELA -->
+    <div *ngIf="vista === 'parcela'" class="subvista">
+        <h2>Detalles de Parcela {{ parcelaSeleccionada }}</h2>
+        <button class="btn-parcela" (click)="regresarLista()">Volver</button>
+    </div>
+
+    <!-- DOCUMENTOS -->
+    <div *ngIf="vista === 'documentos'" class="subvista">
+        <h2>Documentos de Parcela {{ parcelaSeleccionada }}</h2>
+        <button class="btn-parcela" (click)="regresarLista()">Volver</button>
+    </div>
+
+    <!-- PAGOS -->
+    <div *ngIf="vista === 'pagos'" class="subvista">
+        <h2>Pagos de Parcela {{ parcelaSeleccionada }}</h2>
+        <button class="btn-parcela" (click)="regresarLista()">Volver</button>
+    </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+

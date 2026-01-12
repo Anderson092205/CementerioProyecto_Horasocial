@@ -1,0 +1,59 @@
+<header class="top-header">
+  <div class="user-status">Usted no se ha identificado</div>
+</header>
+
+<div class="main-bar">
+  <div class="app-logo-section">
+    <img src="img/logocorto.png" alt="Logo Cementerio" class="main-logo" />
+    <span>CEMENTERIO DIGITAL</span>
+  </div>
+
+  <nav class="main-nav">
+    <!--<a>SOPORTE TÉCNICO</a>
+    <a>|</a> -->
+    <span class="language-selector">ESPAÑOL-INTERNACIONAL (ESI)</span>
+  </nav>
+</div>
+
+<div class="main-container">
+  <div class="login-wrapper">
+    <div class="login-box">
+      <div class="logo-container">
+        <img src="img/LogoAlcaldia (1).png" alt="Logo Alcaldía" class="alcaldia-logo" />
+      </div>
+
+      <form (ngSubmit)="onLogin()">
+        <div class="form-group">
+          <input type="email" name="correo" [(ngModel)]="correo" placeholder="Usuario" required />
+        </div>
+        <div class="form-group">
+          <input type="password" name="password" [(ngModel)]="password" placeholder="Contraseña" required />
+        </div>
+
+        <div class="form-options">
+        <input 
+        type="checkbox" 
+        id="rememberUser" 
+        name="rememberUser" 
+        [(ngModel)]="rememberMe" 
+        (change)="onRememberMeChange()" 
+    />
+    <label for="rememberUser">Recordar nombre de usuario</label>
+
+    <!--<a href="#" class="forgot-password" onclick="return false;">Olvidé mi contraseña</a>-->
+</div>
+
+        <button type="submit" class="btn-acceder">ACCEDER</button>
+
+        <br>
+        <hr>
+        <br>
+
+        <div *ngIf="errorMessage" class="error-message">{{ errorMessage }}</div>
+      </form>
+    </div>
+  </div>
+</div>
+<footer class="app-footer">
+  <p>&copy; 2025 Alcaldía La Libertad Este. Todos los derechos reservados.</p>
+</footer>

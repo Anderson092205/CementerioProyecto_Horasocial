@@ -1,0 +1,89 @@
+<div class="app-container">
+
+    <aside class="sidebar" [class.active]="isSidebarOpen">
+        <div class="sidebar-header">
+            <img src="img/logocorto.png" alt="Logo" class="sidebar-logo">
+            <div class="text-group">
+                <span class="titulo-rosa small">CEMENTERIO</span>
+                <span class="titulo-negro small">LA LIBERTAD ESTE</span>
+            </div>
+        </div>
+
+        <nav class="sidebar-nav">
+            <a routerLink="/dashboard" class="nav-link" (click)="toggleSidebar()">
+                <span class="icon">🏠</span> {{ t('Inicio') || 'Inicio' }}
+            </a>
+
+            <a routerLink="/cementerios" class="nav-link active" (click)="toggleSidebar()">
+                <span class="icon">🏛️</span> {{ t('Cementerios') }}
+            </a>
+
+            <a *ngIf="userRol === 'INFORMATICA'" 
+               routerLink="/usuarios/crear" 
+               class="nav-link" 
+               (click)="toggleSidebar()">
+                <span class="icon">👤</span> Gestión de Usuarios
+            </a>
+
+            <div class="sidebar-divider"></div>
+
+            <a (click)="cerrarSesion()" class="nav-link logout-btn">
+                <span class="icon">🚪</span> {{ t('logout') }}
+            </a>
+        </nav>
+    </aside>
+
+    <div class="main-content" [class.shifted]="isSidebarOpen">
+        
+        <header class="top-bar">
+            <div class="header-left">
+                <div class="hamburger" (click)="toggleSidebar()">
+                    <span></span><span></span><span></span>
+                </div>
+
+                <div class="logo-area">
+                    <img src="img/logocorto.png" alt="Logo" class="logo-img">
+                    <div class="text-group">
+                        <span class="titulo-rosa">CEMENTERIO DIGITAL</span>
+                        <span class="titulo-negro">LA LIBERTAD ESTE</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="menu-options">
+                <span>{{ t('soporte') }}</span>
+                <span (click)="cambiarIdioma()" style="cursor:pointer; font-weight:bold;">
+                    {{ t('idioma') }} ({{ lang.toUpperCase() }})
+                </span>
+            </div>
+        </header>
+
+        <hr class="divider">
+
+        <div class="cementerios-container">
+            <h2 class="titulo">"{{ t('bienvenida') }}"</h2>
+
+            <div *ngIf="cargando" class="mensaje cargando">{{ t('cargando') }}</div>
+            <div *ngIf="errorCarga" class="mensaje error">{{ errorCarga }}</div>
+
+            <div class="grid" *ngIf="!cargando">
+                <div class="card" *ngFor="let c of cementerios">
+                    <div class="card-img">
+                        <img src="img/logocorto.png" alt="Imagen Cementerio">
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">{{ c.nombre }}</h3>
+                        <p class="card-tipo">{{ c.tipo }}</p>
+                        <a [routerLink]="['/detalle-cementerio', c.id]" class="btn-ir">
+                            {{ t('ir') }}
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div *ngIf="!cargando && cementerios.length === 0" class="mensaje vacio">
+                {{ t('noResultados') }}
+            </div>
+        </div>
+    </div>
+</div>

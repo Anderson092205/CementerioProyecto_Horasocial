@@ -1,7 +1,7 @@
 package sv.gob.cementerios.cementeriosle.model;
 
-import jakarta.persistence.*;
 import lombok.Data;
+import jakarta.persistence.*;
 
 @Entity
 @Table(name = "rol")
