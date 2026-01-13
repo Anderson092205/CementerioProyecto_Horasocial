@@ -1,0 +1,14 @@
+<h2>Parcelas del Cementerio</h2>
+
+<div class="parcelas">
+
+  <div
+    class="parcela"
+    *ngFor="let p of parcelas"
+    (click)="abrirParcela(p)"
+  >
+    <h3>Parcela {{ p.numero_parcela }}</h3>
+    <p>{{ p.filas }} × {{ p.columnas }}</p>
+  </div>
+
+</div>
