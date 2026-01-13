@@ -1,0 +1,28 @@
+.entierros {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.entierro {
+  border: 1px solid #555;
+  padding: 10px;
+  border-radius: 6px;
+  background-color: #e8f0ff;
+}
+
+.entierro.vacio {
+  background-color: #f0f0f0;
+  color: #777;
+  font-style: italic;
+}
+
+button {
+  padding: 8px 15px;
+}
+
+.lleno {
+  color: red;
+  margin-top: 10px;
+}
