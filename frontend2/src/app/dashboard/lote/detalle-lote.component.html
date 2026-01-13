@@ -1,0 +1,48 @@
+<h2>Detalle del Lote {{ idLote }}</h2>
+
+<div class="entierros">
+
+  <div
+    class="entierro"
+    *ngFor="let e of entierros; let i = index"
+  >
+    <strong>Espacio {{ i + 1 }}</strong>
+    <p>Nombre: {{ e.nombre }}</p>
+    <p>Fecha: {{ e.fecha_defuncion }}</p>
+  </div>
+
+  <div
+    class="entierro vacio"
+    *ngFor="let v of [].constructor(4 - entierros.length)"
+  >
+    <strong>Espacio disponible</strong>
+  </div>
+
+</div>
+
+<!-- 👤 FORMULARIO REAL -->
+<form *ngIf="!loteLleno" class="formulario">
+  <input
+    type="text"
+    placeholder="Nombre del difunto"
+    [(ngModel)]="nuevo.nombre"
+    name="nombre"
+  />
+
+  <input
+    type="date"
+    [(ngModel)]="nuevo.fecha_defuncion"
+    name="fecha"
+  />
+
+  <button type="button" (click)="guardarEntierro()">
+    Registrar entierro
+  </button>
+</form>
+
+<p *ngIf="loteLleno" class="lleno">
+  ⚠️ Este lote ya tiene 4 entierros
+</p>
+
+
+
