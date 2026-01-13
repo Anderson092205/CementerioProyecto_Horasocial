@@ -11,4 +11,11 @@ export class UsuarioService {
   registrar(usuario: any): Observable<any> {
     return this.http.post(`${this.apiUrl}/crear`, usuario);
   }
+
+  actualizarPasswordTemporal(correo: string, nuevaPassword: string): Observable<any> {
+  return this.http.patch(`${this.apiUrl}/actualizar-password-temporal`, {
+    correo,
+    nuevaPassword
+  });
+}
 }

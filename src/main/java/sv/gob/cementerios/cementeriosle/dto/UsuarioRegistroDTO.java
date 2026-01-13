@@ -1,6 +1,7 @@
 package sv.gob.cementerios.cementeriosle.dto;
 
 import lombok.Data;
+import java.util.List;
 
 @Data
 public class UsuarioRegistroDTO {
@@ -9,4 +10,5 @@ public class UsuarioRegistroDTO {
     private String telefono;
     private String contrasena;
     private Integer idRol;
+    private List<Integer> idCementerios;
 }

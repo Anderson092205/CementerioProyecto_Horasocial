@@ -51,11 +51,13 @@ public class AuthController {
                     usuario.getRol().getNombre() // ⭐ USANDO getNombre() para seguridad
             );
 
-            // 5. Devuelve la respuesta COMPLETA
+
+            // 5. Devuelve la respuesta COMPLETA incluyendo la bandera temporal
             AuthResponse response = new AuthResponse(
                     jwt,
                     usuario.getIdUsuario(),
-                    usuario.getRol().getNombre() // ⭐ USANDO getNombre() para seguridad
+                    usuario.getRol().getNombre(),
+                    usuario.getEsTemporal() // <--- Enviamos el estado real de la DB
             );
             return ResponseEntity.ok(response);
 

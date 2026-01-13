@@ -52,4 +52,13 @@ public class CementerioController {
         CementerioDetalleDTO detalle = cementerioService.obtenerDetallePorId(id);
         return ResponseEntity.ok(detalle);
     }
+
+    // ==========================================================
+// 3. ENDPOINT PARA LISTA DESPLEGABLE (Registro de Usuarios)
+//    Ruta: GET /api/v1/cementerios/lista-completa
+// ==========================================================
+    @GetMapping("/lista-completa")
+    public ResponseEntity<List<CementerioResponseDTO>> obtenerTodosParaSelect() {
+        return ResponseEntity.ok(cementerioService.listarTodos());
+    }
 }
