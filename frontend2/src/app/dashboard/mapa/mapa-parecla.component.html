@@ -1,0 +1,21 @@
+<h2>
+  Cementerio {{ idCementerio }} – Parcela {{ numParcela }}
+</h2>
+
+<div class="mapa">
+  <div
+    class="lote"
+    *ngFor="let lote of lotes"
+    [ngClass]="{
+      libre: lote.entierros === 0,
+      ocupado: lote.entierros > 0 && lote.entierros < 4,
+      lleno: lote.entierros >= 4
+    }"
+    (click)="abrirLote(lote)"
+  >
+    <div>Lote {{ lote.id_lote }}</div>
+    <small>{{ lote.entierros }}/4</small>
+  </div>
+</div>
+
+
